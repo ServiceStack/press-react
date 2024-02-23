@@ -56,6 +56,7 @@ export default defineConfig(async () => {
       alias: {
         '@': fileURLToPath(new URL('./src', import.meta.url)),
       }
-    }
+    },
+    assetsInclude: ['**/*.md'],
   }
 })

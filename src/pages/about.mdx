@@ -11,3 +11,50 @@ This template contains our essential recommendations for a modern Vue Single Pag
 productivity and performance.
 
 <Include src="features.md" />
+
+## React Plugins
+
+The Vite plugins registered in `vite.config.ts` improves productivity by adopting popular conventions that automating-away manual tasks & configurations.
+
+### [Iconify for React](https://iconify.design/docs/icon-components/react/)
+
+For accessing [thousands of Iconfigy's SVG icons](https://icon-sets.iconify.design) as Vue components **on-demand** universally.
+
+```ts
+import { Icon } from '@iconify/react'
+```
+
+#### Usage
+
+```html
+<Icon icon="mdi-light:home" />
+```
+
+### [unplugin-vue-router](https://github.com/posva/unplugin-vue-router)
+
+For auto generating vue routing configurations for each Vue 3 component from 
+[NuxtJS inspired File System Routing](https://github.com/posva/unplugin-vue-router?tab=readme-ov-file#routes-folder-structure) conventions.
+
+```ts
+Pages({
+  extensions: ['tsx', 'mdx']
+})
+```
+
+### [unplugin-vue-markdown](https://github.com/unplugin/unplugin-vue-markdown)
+
+For enabling Markdown Support by converting each `.md` document into a Vue Component that's rendered using 
+[markdown-it](https://github.com/markdown-it/markdown-it).
+
+```ts
+Markdown({
+    markdownItOptions: {
+        // html: true,
+    },
+    markdownItSetup(md) {
+        //md.use(markdownPlugin)
+    },
+    wrapperComponent: 'MarkdownPage'
+})
+```
+
