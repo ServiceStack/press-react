@@ -1,0 +1,48 @@
+[
+    {
+        "slug": "nextjs",
+        "fileName": "nextjs.md",
+        "date": "2022-02-08",
+        "tags": [
+            "nextjs",
+            "react",
+            "jamstack"
+        ],
+        "wordCount": 51,
+        "lineCount": 6,
+        "title": "Rapidly develop C# .NET Next.js JamStack Apps with Rider",
+        "url": "https://youtu.be/3pPLRyPsO5A",
+        "order": 1,
+        "group": "react"
+    },
+    {
+        "slug": "autoquery-bookings",
+        "fileName": "autoquery-bookings.md",
+        "date": "2022-08-16",
+        "tags": [
+            "autoquery"
+        ],
+        "wordCount": 36,
+        "lineCount": 6,
+        "title": "Build a Bookings API with Auto Admin UI in minutes",
+        "url": "https://youtu.be/rSFiikDjGos",
+        "order": 2,
+        "group": "react"
+    },
+    {
+        "slug": "autogen-locode",
+        "fileName": "autogen-locode.md",
+        "date": "2022-05-16",
+        "tags": [
+            "autoquery",
+            "autogen",
+            "locode"
+        ],
+        "wordCount": 67,
+        "lineCount": 6,
+        "title": "Database first development with Locode",
+        "url": "https://youtu.be/NiTp5Z_5U2Y",
+        "order": 3,
+        "group": "react"
+    }
+]

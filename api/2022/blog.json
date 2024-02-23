@@ -1,0 +1,35 @@
+[
+    {
+        "slug": "typography",
+        "fileName": "typography.md",
+        "date": "2022-12-31",
+        "tags": [
+            "tailwind",
+            "markdown"
+        ],
+        "wordCount": 666,
+        "lineCount": 78,
+        "title": "Tailwind Typography",
+        "summary": "tailwindcss/typography enabled for Markdown pages",
+        "author": "Lucy Bates",
+        "image": "https://images.unsplash.com/photo-1497250681960-ef046c08a56e?crop=entropy&fit=crop&h=1000&w=2000",
+        "url": "https://press-react.servicestack.net/posts/typography"
+    },
+    {
+        "slug": "hetzner-cloud",
+        "fileName": "hetzner-cloud.md",
+        "date": "2022-09-06",
+        "tags": [
+            "dev",
+            "hosting",
+            "devops"
+        ],
+        "wordCount": 2832,
+        "lineCount": 220,
+        "title": "In pursuit of the best value US cloud provider",
+        "summary": "We've been using AWS at ServiceStack for 10+ years, it's served us well but suffers from complex & expensive pricing",
+        "author": "Brandon Foley",
+        "image": "https://images.unsplash.com/photo-1451187580459-43490279c0fa?crop=entropy&fit=crop&h=1000&w=2000",
+        "url": "https://press-react.servicestack.net/posts/hetzner-cloud"
+    }
+]

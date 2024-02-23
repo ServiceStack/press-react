@@ -1,0 +1,86 @@
+{
+    "blog": [
+        {
+            "slug": "typography",
+            "fileName": "typography.md",
+            "date": "2022-12-31",
+            "tags": [
+                "tailwind",
+                "markdown"
+            ],
+            "wordCount": 666,
+            "lineCount": 78,
+            "title": "Tailwind Typography",
+            "summary": "tailwindcss/typography enabled for Markdown pages",
+            "author": "Lucy Bates",
+            "image": "https://images.unsplash.com/photo-1497250681960-ef046c08a56e?crop=entropy&fit=crop&h=1000&w=2000",
+            "url": "https://press-react.servicestack.net/posts/typography"
+        },
+        {
+            "slug": "hetzner-cloud",
+            "fileName": "hetzner-cloud.md",
+            "date": "2022-09-06",
+            "tags": [
+                "dev",
+                "hosting",
+                "devops"
+            ],
+            "wordCount": 2832,
+            "lineCount": 220,
+            "title": "In pursuit of the best value US cloud provider",
+            "summary": "We've been using AWS at ServiceStack for 10+ years, it's served us well but suffers from complex & expensive pricing",
+            "author": "Brandon Foley",
+            "image": "https://images.unsplash.com/photo-1451187580459-43490279c0fa?crop=entropy&fit=crop&h=1000&w=2000",
+            "url": "https://press-react.servicestack.net/posts/hetzner-cloud"
+        }
+    ],
+    "videos": [
+        {
+            "slug": "nextjs",
+            "fileName": "nextjs.md",
+            "date": "2022-02-08",
+            "tags": [
+                "nextjs",
+                "react",
+                "jamstack"
+            ],
+            "wordCount": 51,
+            "lineCount": 6,
+            "title": "Rapidly develop C# .NET Next.js JamStack Apps with Rider",
+            "url": "https://youtu.be/3pPLRyPsO5A",
+            "order": 1,
+            "group": "react"
+        },
+        {
+            "slug": "autoquery-bookings",
+            "fileName": "autoquery-bookings.md",
+            "date": "2022-08-16",
+            "tags": [
+                "autoquery"
+            ],
+            "wordCount": 36,
+            "lineCount": 6,
+            "title": "Build a Bookings API with Auto Admin UI in minutes",
+            "url": "https://youtu.be/rSFiikDjGos",
+            "order": 2,
+            "group": "react"
+        },
+        {
+            "slug": "autogen-locode",
+            "fileName": "autogen-locode.md",
+            "date": "2022-05-16",
+            "tags": [
+                "autoquery",
+                "autogen",
+                "locode"
+            ],
+            "wordCount": 67,
+            "lineCount": 6,
+            "title": "Database first development with Locode",
+            "url": "https://youtu.be/NiTp5Z_5U2Y",
+            "order": 3,
+            "group": "react"
+        }
+    ],
+    "whatsNew": []
+}
