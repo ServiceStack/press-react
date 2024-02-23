@@ -1,0 +1,198 @@
+---
+title: Simple, Modern React MDX
+summary: Learn about JS Modules, Vue 3 and available rich UI Components
+tags: [js, dev]
+image: https://images.unsplash.com/photo-1497515114629-f71d768fd07c?crop=entropy&fit=crop&h=1000&w=2000
+author: Brandon Foley
+---
+
+import Hello from "./components/Hello"
+import Counter from "./components/Counter"
+import Plugin from "./components/Plugin"
+
+<svg className="sm:float-left mr-8 w-24 h-24" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 630 630">
+    <rect width="630" height="630" fill="#f7df1e" />
+    <path d="m423.2 492.19c12.69 20.72 29.2 35.95 58.4 35.95 24.53 0 40.2-12.26 40.2-29.2 0-20.3-16.1-27.49-43.1-39.3l-14.8-6.35c-42.72-18.2-71.1-41-71.1-89.2 0-44.4 33.83-78.2 86.7-78.2 37.64 0 64.7 13.1 84.2 47.4l-46.1 29.6c-10.15-18.2-21.1-25.37-38.1-25.37-17.34 0-28.33 11-28.33 25.37 0 17.76 11 24.95 36.4 35.95l14.8 6.34c50.3 21.57 78.7 43.56 78.7 93 0 53.3-41.87 82.5-98.1 82.5-54.98 0-90.5-26.2-107.88-60.54zm-209.13 5.13c9.3 16.5 17.76 30.45 38.1 30.45 19.45 0 31.72-7.61 31.72-37.2v-201.3h59.2v202.1c0 61.3-35.94 89.2-88.4 89.2-47.4 0-74.85-24.53-88.81-54.075z"/>
+</svg>
+
+JavaScript has progressed significantly in recent times where many of the tooling & language enhancements
+that we used to rely on external tools for is now available in modern browsers alleviating the need for
+complex tooling and npm dependencies that have historically plagued modern web development.
+
+The good news is that the complex npm tooling that was previously considered mandatory in modern JavaScript App
+development can be considered optional as we can now utilize modern browser features like
+[async/await](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/async_function),
+[JavaScript Modules](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Modules),
+[dynamic imports](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/import),
+[import maps](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/script/type/importmap)
+and [modern language features](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide) for a
+sophisticated development workflow without the need for any npm build tools.
+
+### Bringing Simplicity Back
+
+The [razor](https://github.com/NetCoreTemplates/razor) template focuses on simplicity and eschews many aspects that has
+complicated modern JavaScript development,
+specifically:
+
+- No npm node_modules or build tools
+- No client side routing
+- No heavy client state
+
+Effectively abandoning the traditional SPA approach in lieu of a simpler [MPA](https://docs.astro.build/en/concepts/mpa-vs-spa/)
+development model using Razor Pages for Server Rendered content with any interactive UIs progressively enhanced with JavaScript.
+
+#### Freedom to use any JS library
+
+Avoiding the SPA route ends up affording more flexibility on which JS libraries each page can use as without heavy bundled JS
+blobs of all JS used in the entire App, it's free to only load the required JS each page needs to best implement its
+required functionality, which can be any JS library, preferably utilizing ESM builds that can be referenced from a
+[JavaScript Module](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Modules), taking advantage of the module system
+native to modern browsers able to efficiently download the declarative matrix of dependencies each script needs.
+
+### Best libraries for progressive Multi Page Apps
+
+It includes a collection of libraries we believe offers the best modern development experience in Progressive
+MPA Web Apps, specifically:
+
+#### [Tailwind CLI](https://tailwindcss.com/docs/installation)
+Tailwind enables a responsive, utility-first CSS framework for creating maintainable CSS at scale without the need for any CSS
+preprocessors like Sass, which is configured to run from an npx script to avoid needing any node_module dependencies.
+
+#### [Vue 3](https://vuejs.org/guide/introduction.html)
+Vue is a popular Progressive JavaScript Framework that makes it easy to create interactive Reactive Components whose
+[Composition API](https://vuejs.org/api/composition-api-setup.html) offers a nice development model without requiring any
+pre-processors like JSX.
+
+Where creating a component is as simple as:
+
+```jsx
+type Props = { name:string }
+export default ({ name }:Props) => (<b>Hello, {name}!</b>)
+```
+<div className="text-center text-2xl py-2">
+    <Hello name="Vue 3" />
+</div>
+
+Or a simple reactive example:
+
+```jsx
+import { useState } from 'react'
+
+export default () => {
+    let [count, setCount] = useState(1)
+    return <b onClick={() => setCount(count++)}>Counter {count}</b>
+}
+```
+
+<div className="text-center text-2xl py-2 cursor-pointer select-none">
+    <Counter />
+</div>
+
+### React Components in Markdown
+
+Inside `.mdx` Markdown pages React Components can be embedded using MDX Syntax:
+
+```html
+<Hello name="Vue 3" />
+<Counter />
+```
+
+```js
+import { Button as PrimaryButton } from "@/components/ui/button"
+import {
+  Dialog,
+  DialogContent,
+  DialogDescription,
+  DialogHeader,
+  DialogTitle,
+  DialogTrigger,
+} from "@/components/ui/dialog"
+
+export default () => {
+  return (<Dialog>
+      <DialogTrigger asChild>
+        <PrimaryButton>Open Modal</PrimaryButton>
+      </DialogTrigger>
+      <DialogContent>
+        <DialogHeader>
+          <DialogTitle>Greetings</DialogTitle>
+          <DialogDescription className="p-4 text-xl">
+            Hello @servicestack/vue!
+          </DialogDescription>
+        </DialogHeader>
+      </DialogContent>
+    </Dialog>)
+}
+```
+
+```html
+<Plugin />
+```
+
+<div className="text-center">
+    <Plugin id="plugin" className="text-2xl py-4" />
+</div>
+
+```html
+<input type="text" id="txtName">
+<div id="result"></div>
+
+<script type="module">
+import { JsonApiClient, $1, on } from '@servicestack/client'
+import { Hello } from '/types/mjs'
+
+on('#txtName', {
+    async keyup(el) {
+        const client = JsonApiClient.create()
+        const api = await client.api(new Hello({ name:el.target.value }))
+        $1('#result').innerHTML = api.response.result
+    }
+})
+</script>
+```
+
+For better IDE intelli-sense during development, save the annotated Typed DTOs to disk with:
+
+:::sh
+npm run dtos
+:::
+
+That can be referenced instead to unlock your IDE's static analysis type-checking and intelli-sense benefits during development:
+
+```js
+import { Hello } from '/js/dtos.mjs'
+client.api(new Hello({ name }))
+```
+
+You'll typically use all these libraries in your **API-enabled** components as seen in the
+[HelloApi.mjs](https://github.com/NetCoreTemplates/razor/blob/main/MyApp/wwwroot/mjs/components/HelloApi.mjs)
+component on the home page which calls the [Hello](/ui/Hello) API on each key press:
+
+```js
+import { ref } from "vue"
+import { useClient } from "@servicestack/vue"
+import { Hello } from "../dtos.mjs"
+
+export default {
+    template:/*html*/`<div class="flex flex-wrap justify-center">
+        <TextInput v-model="name" @keyup="update" />
+        <div class="ml-3 mt-2 text-lg">{{ result }}</div>
+    </div>`,
+    props:['value'],
+    setup(props) {
+        let name = ref(props.value)
+        let result = ref('')
+        let client = useClient()
+
+        async function update() {
+            let api = await client.api(new Hello({ name }))
+            if (api.succeeded) {
+                result.value = api.response.result
+            }
+        }
+        update()
+
+        return { name, update, result }
+    }
+}
+```

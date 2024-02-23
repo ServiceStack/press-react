@@ -1,0 +1,9 @@
+{
+  "localBaseUrl": "http://localhost:5173",
+  "publicBaseUrl": "https://react-vue.servicestack.net",
+  "siteTwitter": "@React",
+  "blogTitle": "From the blog",
+  "blogDescription": "Writing on software design and aerospace industry.",
+  "blogEmail": "email@example.org (React)",
+  "blogImageUrl": "https://servicestack.net/img/logo.png"
+}
