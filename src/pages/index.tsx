@@ -34,7 +34,7 @@ const Index = () => {
                         Getting Started
                     </h2>
                     <div>
-                        <GettingStarted template="react-spa" />
+                        <GettingStarted template="press-react" />
                     </div>
                 </div>
             </section>

@@ -13,7 +13,7 @@ import remarkPrism from 'remark-prism'
 import remarkParse from "remark-parse"
 import rehypeStringify from 'rehype-stringify'
 import remarkDirective from 'remark-directive'
-import remarkContainers from './vite.config.markdown'
+import {remarkContainers,remarkFencedCode} from './vite.config.markdown'
 
 // @ts-ignore - no types
 import Press from "vite-plugin-press"
@@ -31,6 +31,7 @@ export default defineConfig(async () => {
         // See https://mdxjs.com/advanced/plugins
         remarkPlugins: [
           remarkFrontmatter,
+          remarkFencedCode,
           remarkDirective,
           remarkGfm,
           remarkParse,
@@ -57,6 +58,6 @@ export default defineConfig(async () => {
         '@': fileURLToPath(new URL('./src', import.meta.url)),
       }
     },
-    assetsInclude: ['**/*.md'],
+    // assetsInclude: ['**/*.md'],
   }
 })

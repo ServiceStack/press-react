@@ -1,0 +1,64 @@
+---
+title: React Components in Markdown
+summary: How to reference and Import React Components in Markdown
+author: Lucy Bates
+tags: [docs, markdown]
+image: https://images.unsplash.com/photo-1700427296131-0cc4c4610fc6?crop=entropy&fit=crop&h=1000&w=2000
+---
+
+import Hello from "./components/Hello"
+import Counter from "./components/Counter"
+import Plugin from "./components/Plugin"
+import HelloApi from "./components/HelloApi"
+import ChartJs from "./components/ChartJs"
+
+## React Components in Markdown Pages
+
+Components that are frequently used can be registered as global components
+
+```tsx
+<div className="py-12 flex justify-evenly">
+  <Iconify className="w-28 h-28" icon="logos:vue" />
+  <Iconify className="w-28 h-28" icon="logos:vitejs" />
+  <Iconify className="w-28 h-28" icon="logos:react" />
+</div>
+```
+
+<div className="py-12 flex justify-evenly">
+  <Iconify className="w-28 h-28" icon="logos:vue" />
+  <Iconify className="w-28 h-28" icon="logos:vitejs" />
+  <Iconify className="w-28 h-28" icon="logos:react" />
+</div>
+
+
+
+
+The [JavaScript](/posts/javascript) blog post is a good example showing how you can import and reference components in Markdown pages:
+
+```tsx
+import Hello from "./components/Hello"
+import Counter from "./components/Counter"
+import Plugin from "./components/Plugin"
+import HelloApi from "./components/HelloApi"
+import ChartJs from "./components/ChartJs"
+
+<Hello name="Vue 3" />
+<Counter />
+```
+
+As well as use Global Components which don't need to be imported, e.g:
+
+```tsx
+<FileLayout files={{
+  _videos: {
+    'vue': {
+       _: ['admin.md','autoquerygrid.md']
+    },
+    'react': {
+       _: ['locode.md','bookings.md']
+    },
+  }
+}} />
+```
+
+#### Output

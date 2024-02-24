@@ -76,7 +76,7 @@ export default (): JSX.Element => {
                                     <div className="mb-6 text-lg text-gray-500 dark:text-gray-400">
                                         <time dateTime={dateTimestamp(post.date)}>{dateLabel(post.date)}</time>
                                         <span className="px-1" aria-hidden="true">&middot;</span>
-                                        <span>{post.wordCount} min read</span>
+                                        <span>{post.minutesToRead} min read</span>
                                     </div>
                                 </div>}
 

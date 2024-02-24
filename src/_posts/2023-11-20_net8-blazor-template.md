@@ -6,10 +6,6 @@ image: https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?crop=entropy
 author: Lucy Bates
 ---
 
-<script setup>
-import BlazorTemplate from "./components/BlazorTemplate.vue";
-</script>
-
 With the release of **.NET 8**, we're happy to announce ServiceStack's new [Blazor](https://blazor.web-templates.io/)
 Tailwind project template that takes advantage of .NET 8 Blazor's new features that redefines modern Web Development in C#.
 
@@ -35,16 +31,6 @@ We’ll also discuss the project's structure, usage of **ASP.NET Core Identity**
 <div class="py-8 max-w-7xl mx-auto px-4 sm:px-6">
     <LiteYouTube id="hqyozHSL0Nk" title=".NET 8 Blazor Tailwind Template" />
 </div>
-</div>
-
-<div class="not-prose relative bg-white dark:bg-black py-4">
-    <div class="mx-auto max-w-md px-4 text-center sm:max-w-3xl sm:px-6 lg:max-w-7xl lg:px-8">
-        <p class="mt-2 text-3xl font-extrabold tracking-tight text-gray-900 dark:text-gray-50 sm:text-4xl">Create a new Blazor Tailwind App</p>
-        <p class="mx-auto mt-5 max-w-prose text-xl text-gray-500"> 
-            Create a new Blazor Tailwind project with your preferred project name:
-        </p>
-    </div>
-    <BlazorTemplate />
 </div>
 
 ## ASP.NET Core Identity Integration

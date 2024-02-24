@@ -1,6 +1,25 @@
 import { h } from 'hastscript'
 import { visit } from 'unist-util-visit'
 
+const fencedComponents = ['files','files2']
+
+// Convert ```component``` to <component body={children} />
+export function remarkFencedCode(options: { components?:string[] } = {}) {
+    return function (tree: any) {
+        visit(tree, (node): any => {
+            const allComponents = [options.components || [], ...fencedComponents]
+            const type = node.type
+            const data = node.data || (node.data = {})
+            if (type === 'code' && allComponents.includes(node.lang)) {
+                node.type = 'paragraph'
+                data.hName = node.lang
+                data.hProperties = Object.assign({}, data.hProperties, { className: node.attributes?.class, body:node.value })
+            }
+            return node
+        })
+    }
+}
+
 // Convert :::component{.cls}::: Markdown Containers to <component className="cls" />
 export function remarkContainers() {
     return function (tree: any) {
@@ -9,7 +28,8 @@ export function remarkContainers() {
         visit(tree, (node): any => {
             const type = node.type
             const data = node.data || (node.data = {})
-            const line = node.children && node.children[0]?.value
+            const firstChild = node.children && node.children[0]
+            const line = firstChild?.value
             if (type === 'textDirective' || type === 'leafDirective' || type === 'containerDirective') {
                 data.hName = node.name
                 data.hProperties = Object.assign({}, data.hProperties, { className: node.attributes?.class })

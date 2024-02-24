@@ -9,11 +9,9 @@ author: Brandon Foley
 import Hello from "./components/Hello"
 import Counter from "./components/Counter"
 import Plugin from "./components/Plugin"
+import HelloApi from "./components/HelloApi"
 
-<svg className="sm:float-left mr-8 w-24 h-24" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 630 630">
-    <rect width="630" height="630" fill="#f7df1e" />
-    <path d="m423.2 492.19c12.69 20.72 29.2 35.95 58.4 35.95 24.53 0 40.2-12.26 40.2-29.2 0-20.3-16.1-27.49-43.1-39.3l-14.8-6.35c-42.72-18.2-71.1-41-71.1-89.2 0-44.4 33.83-78.2 86.7-78.2 37.64 0 64.7 13.1 84.2 47.4l-46.1 29.6c-10.15-18.2-21.1-25.37-38.1-25.37-17.34 0-28.33 11-28.33 25.37 0 17.76 11 24.95 36.4 35.95l14.8 6.34c50.3 21.57 78.7 43.56 78.7 93 0 53.3-41.87 82.5-98.1 82.5-54.98 0-90.5-26.2-107.88-60.54zm-209.13 5.13c9.3 16.5 17.76 30.45 38.1 30.45 19.45 0 31.72-7.61 31.72-37.2v-201.3h59.2v202.1c0 61.3-35.94 89.2-88.4 89.2-47.4 0-74.85-24.53-88.81-54.075z"/>
-</svg>
+<Icon className="sm:float-left mr-4 w-28 h-28" style={{marginTop:'-4px'}} icon="vscode-icons:file-type-js-official" />
 
 JavaScript has progressed significantly in recent times where many of the tooling & language enhancements
 that we used to rely on external tools for is now available in modern browsers alleviating the need for
@@ -80,7 +78,7 @@ import { useState } from 'react'
 
 export default () => {
     let [count, setCount] = useState(1)
-    return <b onClick={() => setCount(count++)}>Counter {count}</b>
+    return <b onClick={() => setCount(count+=1)}>Counter {count}</b>
 }
 ```
 
@@ -92,12 +90,12 @@ export default () => {
 
 Inside `.mdx` Markdown pages React Components can be embedded using MDX Syntax:
 
-```html
+```tsx
 <Hello name="Vue 3" />
 <Counter />
 ```
 
-```js
+```tsx
 import { Button as PrimaryButton } from "@/components/ui/button"
 import {
   Dialog,
@@ -125,7 +123,7 @@ export default () => {
 }
 ```
 
-```html
+```tsx
 <Plugin />
 ```
 
@@ -133,25 +131,10 @@ export default () => {
     <Plugin id="plugin" className="text-2xl py-4" />
 </div>
 
-```html
-<input type="text" id="txtName">
-<div id="result"></div>
 
-<script type="module">
-import { JsonApiClient, $1, on } from '@servicestack/client'
-import { Hello } from '/types/mjs'
+## API Development
 
-on('#txtName', {
-    async keyup(el) {
-        const client = JsonApiClient.create()
-        const api = await client.api(new Hello({ name:el.target.value }))
-        $1('#result').innerHTML = api.response.result
-    }
-})
-</script>
-```
-
-For better IDE intelli-sense during development, save the annotated Typed DTOs to disk with:
+For better IDE intelli-sense during development, you can save your server's annotated Typed DTOs to disk with:
 
 :::sh
 npm run dtos
@@ -160,39 +143,44 @@ npm run dtos
 That can be referenced instead to unlock your IDE's static analysis type-checking and intelli-sense benefits during development:
 
 ```js
-import { Hello } from '/js/dtos.mjs'
+import { Hello } from '@/dtos'
 client.api(new Hello({ name }))
 ```
 
 You'll typically use all these libraries in your **API-enabled** components as seen in the
-[HelloApi.mjs](https://github.com/NetCoreTemplates/razor/blob/main/MyApp/wwwroot/mjs/components/HelloApi.mjs)
-component on the home page which calls the [Hello](/ui/Hello) API on each key press:
+[HelloApi.tsx](https://github.com/NetCoreTemplates/react-spa/blob/main/MyApp.Client/src/_posts/components/HelloApi.tsx)
+component which calls the [Hello](https://react-spa.web-templates.io/ui/Hello) API on each key press:
 
-```js
-import { ref } from "vue"
-import { useClient } from "@servicestack/vue"
-import { Hello } from "../dtos.mjs"
+```tsx
+import { ChangeEvent, useState, useEffect } from "react"
+import { JsonServiceClient } from "@servicestack/client"
+import { TextInput } from "@/components/Form"
+import { Hello } from "@/dtos"
 
-export default {
-    template:/*html*/`<div class="flex flex-wrap justify-center">
-        <TextInput v-model="name" @keyup="update" />
-        <div class="ml-3 mt-2 text-lg">{{ result }}</div>
-    </div>`,
-    props:['value'],
-    setup(props) {
-        let name = ref(props.value)
-        let result = ref('')
-        let client = useClient()
-
-        async function update() {
+type Props = { value: string }
+export default ({ value }:Props) => {
+    const [name, setName] = useState(value)
+    const [result, setResult] = useState('')
+    
+    const client = new JsonServiceClient()
+    useEffect(() => {
+        (async () => {
             let api = await client.api(new Hello({ name }))
-            if (api.succeeded) {
-                result.value = api.response.result
+            if (api.response) {
+                setResult(api.response.result)
             }
-        }
-        update()
+        })()
+    }, [name])
 
-        return { name, update, result }
-    }
+    return (<div className="my-8 max-w-fit mx-auto">
+      <TextInput value={name} onChange={e => setName(e.target.value)} />
+      <b className="my-2 block text-center text-lg">{result}</b>
+    </div>)
 }
 ```
+
+```tsx
+<HelloApi value="React" />
+```
+
+<HelloApi value="React" />
