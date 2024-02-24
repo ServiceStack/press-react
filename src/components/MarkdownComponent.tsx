@@ -6,6 +6,23 @@ import LiteYouTube from "./LiteYouTube"
 import FileLayout from "./FileLayout"
 import { Icon } from "@iconify/react"
 
+export const Components: { [name: string]: JSX.Element | Function } = {
+    Files,
+    Icon,
+    Iconify: Icon, // alias for portability with Vue Markdown
+    Youtube,
+    FileLayout,
+    Include,
+    Alert,
+    Tip: ({ className, ...remaining }: AlertProps) => <Alert title="TIP" className={cn('tip', className)} {...remaining} />,
+    Info: ({ className, ...remaining }: AlertProps) => <Alert title="INFO" className={cn('info', className)} {...remaining} />,
+    Warning: ({ className, ...remaining }: AlertProps) => <Alert title="WARNING" className={cn('warning', className)} {...remaining} />,
+    Danger: ({ className, ...remaining }: AlertProps) => <Alert title="DANGER" className={cn('danger', className)} {...remaining} />,
+    Copy: ({ className, ...remaining }: CopyLineProps) => <CopyLine className={cn('not-prose copy cp', className)} icon="bg-sky-500" {...remaining} />,
+    Sh: ({ className, ...remaining }: CopyLineProps) => <CopyLine className={cn('not-prose sh-copy cp', className)}
+        box="bg-gray-800" icon="bg-green-600" txt="whitespace-pre text-base text-gray-100" {...remaining} />,
+}
+
 function Include({ src }: { src: string }) {
     const press = React.useContext(PressContext)
     const factory = (press.components as any).includes[src]
@@ -76,20 +93,7 @@ function Youtube({ arg }: { arg: string }) {
     return <LiteYouTube id={arg} />
 }
 
-const invalidTokens = ['function', 'Function', 'eval', '=>', ';']
-const restrictedScope = Object.assign(Object.keys(globalThis).reduce((acc, k) => {
-    acc[k] = undefined; return acc
-}, {} as Record<string, any>))
-
-function scopedExpr(src: string) {
-    if (invalidTokens.some(x => src.includes(x)))
-        throw new Error(`Unsafe script: '${src}'`)
-
-    return (new Function("with(this) { return (" + src + ") }")).call(restrictedScope)
-}
-
 function Files({ body }: { body?: string }) {
-
     /* Takes an ascii string of indented folder and file paths:
     const from = `/meta
         /2022
@@ -147,23 +151,6 @@ function Files({ body }: { body?: string }) {
     const txt = body?.trim() || ''
     const obj = parseFileStructure(txt)
     return <FileLayout files={obj} />
-}
-
-export const Components: { [name: string]: JSX.Element | Function } = {
-    Files,
-    Icon,
-    Iconify: Icon, // alias for portability with Vue Markdown
-    Youtube,
-    FileLayout,
-    Include,
-    Alert,
-    Tip: ({ className, ...remaining }: AlertProps) => <Alert title="TIP" className={cn('tip', className)} {...remaining} />,
-    Info: ({ className, ...remaining }: AlertProps) => <Alert title="INFO" className={cn('info', className)} {...remaining} />,
-    Warning: ({ className, ...remaining }: AlertProps) => <Alert title="WARNING" className={cn('warning', className)} {...remaining} />,
-    Danger: ({ className, ...remaining }: AlertProps) => <Alert title="DANGER" className={cn('danger', className)} {...remaining} />,
-    Copy: ({ className, ...remaining }: CopyLineProps) => <CopyLine className={cn('not-prose copy cp', className)} icon="bg-sky-500" {...remaining} />,
-    Sh: ({ className, ...remaining }: CopyLineProps) => <CopyLine className={cn('not-prose sh-copy cp', className)}
-        box="bg-gray-800" icon="bg-green-600" txt="whitespace-pre text-base text-gray-100" {...remaining} />,
 }
 
 // .md uses :::info::: and .mdx uses <Info />

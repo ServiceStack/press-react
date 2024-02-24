@@ -45,6 +45,18 @@ export function dateTimestamp(date:any) {
     }
 }
 
+const invalidTokens = ['function', 'Function', 'eval', '=>', ';']
+const restrictedScope = Object.assign(Object.keys(globalThis).reduce((acc, k) => {
+    acc[k] = undefined; return acc
+}, {} as Record<string, any>))
+
+export function scopedExpr(src: string) {
+    if (invalidTokens.some(x => src.includes(x)))
+        throw new Error(`Unsafe script: '${src}'`)
+
+    return (new Function("with(this) { return (" + src + ") }")).call(restrictedScope)
+}
+
 export function cn(...inputs: ClassValue[]) {
   return twMerge(clsx(inputs))
 }
