@@ -1,6 +1,22 @@
 {
     "blog": [
         {
+            "slug": "markdown-components-in-react",
+            "fileName": "markdown-components-in-react.mdx",
+            "date": "2024-03-01",
+            "tags": [
+                "docs",
+                "markdown"
+            ],
+            "wordCount": 974,
+            "lineCount": 299,
+            "title": "React Components in Markdown",
+            "summary": "How to reference and Import React Components in Markdown",
+            "author": "Lucy Bates",
+            "image": "https://images.unsplash.com/photo-1700427296131-0cc4c4610fc6?crop=entropy&fit=crop&h=1000&w=2000",
+            "url": "https://press-react.servicestack.net/posts/markdown-components-in-react"
+        },
+        {
             "slug": "vite-press-plugin",
             "fileName": "vite-press-plugin.md",
             "date": "2024-03-01",
@@ -8,8 +24,8 @@
                 "docs",
                 "markdown"
             ],
-            "wordCount": 1973,
-            "lineCount": 487,
+            "wordCount": 2017,
+            "lineCount": 490,
             "title": "Vite Press Plugin",
             "summary": "Introducing the Vite Press Plugin for Vite Vue & React Apps",
             "author": "Lucy Bates",

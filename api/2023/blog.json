@@ -25,8 +25,8 @@
             "blazor",
             "templates"
         ],
-        "wordCount": 1263,
-        "lineCount": 94,
+        "wordCount": 1192,
+        "lineCount": 80,
         "title": "New .NET 8 Blazor Tailwind Template",
         "summary": "The new Blazor for .NET 8 template streamlines web UI development in C#.",
         "image": "https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?crop=entropy&fit=crop&h=1000&w=2000",
@@ -35,7 +35,7 @@
     },
     {
         "slug": "razor-ssg-new-blog-features",
-        "fileName": "razor-ssg-new-blog-features.md",
+        "fileName": "razor-ssg-new-blog-features.mdx",
         "date": "2023-08-23",
         "tags": [
             "razor",
@@ -43,8 +43,8 @@
             "blog",
             "dev"
         ],
-        "wordCount": 1469,
-        "lineCount": 335,
+        "wordCount": 1471,
+        "lineCount": 339,
         "title": "New Blogging features in Razor SSG",
         "summary": "Explore the new Blogging Features in Razor SSG",
         "image": "https://images.unsplash.com/photo-1486312338219-ce68d2c6f44d?crop=entropy&fit=crop&h=1000&w=2000",
@@ -77,8 +77,8 @@
             "js",
             "dev"
         ],
-        "wordCount": 1018,
-        "lineCount": 191,
+        "wordCount": 821,
+        "lineCount": 178,
         "title": "Simple, Modern React MDX",
         "summary": "Learn about JS Modules, Vue 3 and available rich UI Components",
         "image": "https://images.unsplash.com/photo-1497515114629-f71d768fd07c?crop=entropy&fit=crop&h=1000&w=2000",
