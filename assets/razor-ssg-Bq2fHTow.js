@@ -1,4 +1,0 @@
-import{j as e}from"./index-Daes5Axe.js";function o(t){const n={a:"a",p:"p",...t.components};return e.jsxs(e.Fragment,{children:[e.jsxs(n.p,{children:["This video takes an in-depth look at the ",e.jsx(n.a,{href:"https://razor-ssg.web-templates.io",children:"razor-ssg"}),` ServiceStack template, a powerful tool that
-harnesses the power of .NET Razor Pages to provide seamless static site generation (SSG) capabilities`]}),`
-`,e.jsx(n.p,{children:`With GitHub Codespaces integration, you can develop, test, and manage your application all within your browser, eliminating the need
-for a dedicated development environment and expediting your workflow, which can all be done on the go from an iPad`})]})}function i(t={}){const{wrapper:n}=t.components||{};return n?e.jsx(n,{...t,children:e.jsx(o,{...t})}):o(t)}export{i as default};
