@@ -24,7 +24,7 @@ export default () => {
                 group="react"/>
 
             <div className="my-8 flex justify-center gap-x-4">
-                <SrcPage path="pages/videos.tsx"/>
+                <SrcPage path="videos.tsx"/>
             </div>
 
         </Layout>

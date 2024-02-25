@@ -13,7 +13,7 @@ import remarkPrism from 'remark-prism'
 import remarkParse from "remark-parse"
 import rehypeStringify from 'rehype-stringify'
 import remarkDirective from 'remark-directive'
-import {remarkContainers,remarkFencedCode} from './vite.config.markdown'
+import { remarkContainers, remarkFencedCode } from './vite.config.markdown'
 
 // @ts-ignore - no types
 import Press from "vite-plugin-press"
