@@ -1,13 +1,13 @@
 import { h } from 'hastscript'
 import { visit } from 'unist-util-visit'
 
-const fencedComponents = ['files']
+const FencedComponents = ['files']
 
 // Convert ```component``` to <component body={children} />
 export function remarkFencedCode(options: { components?:string[] } = {}) {
     return function (tree: any) {
         visit(tree, (node): any => {
-            const allComponents = [options.components || [], ...fencedComponents]
+            const allComponents = [...(options.components || []), ...FencedComponents]
             const type = node.type
             const data = node.data || (node.data = {})
             if (type === 'code' && allComponents.includes(node.lang)) {
