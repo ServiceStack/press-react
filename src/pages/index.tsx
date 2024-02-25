@@ -36,7 +36,7 @@ const Index = () => {
                 <div className="text-center">
                     <h1 className="text-4xl font-bold tracking-tight text-gray-900 dark:text-gray-100 sm:text-5xl md:text-6xl">
                         <span className="block xl:inline">Welcome to </span>
-                        <span className="block text-link-dark dark:text-link-dark xl:inline">React SPA</span>
+                        <span className="block text-link-dark dark:text-link-dark xl:inline">Press React</span>
                     </h1>
                     <p className="mx-auto mt-3 max-w-md text-base text-gray-500 dark:text-gray-400 sm:text-lg md:mt-5 md:max-w-3xl md:text-xl">
                         Welcome to your new React SPA App
