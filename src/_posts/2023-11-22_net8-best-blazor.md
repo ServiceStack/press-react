@@ -6,11 +6,6 @@ image: https://images.unsplash.com/photo-1482686115713-0fbcaced6e28?crop=entropy
 author: Gayle Smith
 ---
 
-<script setup>
-import Counter from "./components/Counter.vue";
-import BlazorVueTemplate from "./components/BlazorVueTemplate.vue";
-</script>
-
 The best way to find out what's new in .NET 8 Blazor is to watch the excellent 
 [Full stack web UI with Blazor in .NET 8](https://www.youtube.com/watch?v=QD2-DwuOfKM) presentation by Daniel Roth and Steve Sanderson, 
 which covers how Blazor has become a Full Stack UI Web Technology for developing any kind of .NET Web App.
@@ -402,12 +397,6 @@ export default {
 }
 ```
 
-:::{.text-center}
-#### Blazor Counter in Vue.js
-
-<counter></counter>
-:::
-
 ## The new Blazor Vue Template 
 
 This ends up being how the Interactive features in the new [blazor-vue](https://github.com/NetCoreTemplates/blazor-vue/) template 
@@ -435,16 +424,6 @@ Vue.js to and the [Vue Components](/vue/) library.
 <div class="py-8 max-w-7xl mx-auto px-4 sm:px-6">
     <LiteYouTube id="ujbTGn4IwFs" title="Blazor Vue Template" />    
 </div>
-</div>
-
-<div class="not-prose relative bg-white dark:bg-black py-4">
-    <div class="mx-auto max-w-md px-4 text-center sm:max-w-3xl sm:px-6 lg:max-w-7xl lg:px-8">
-        <p class="mt-2 text-3xl font-extrabold tracking-tight text-gray-900 dark:text-gray-50 sm:text-4xl">Create a new Blazor Vue Tailwind App</p>
-        <p class="mx-auto mt-5 max-w-prose text-xl text-gray-500"> 
-            Create a new Blazor Vue Tailwind project with your preferred project name:
-        </p>
-    </div>
-    <BlazorVueTemplate repo="NetCoreTemplates/blazor-vue" name="Blazor Vue" />
 </div>
 
 #### Faster iterative development
