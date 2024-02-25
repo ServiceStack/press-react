@@ -1,5 +1,4 @@
 import { useState } from "react"
-import { HelmetProvider, Helmet } from "react-helmet-async"
 import Layout from "@/components/Layout"
 import { Button } from "@/components/ui/button"
 import SrcPage from "@/components/SrcPage"
@@ -8,12 +7,7 @@ export default (): JSX.Element => {
     const [count, setCount] = useState(0)
     const title = `Counter`
 
-    return (<Layout>
-            <HelmetProvider>
-                <Helmet>
-                    <title>{title}</title>
-                </Helmet>
-            </HelmetProvider>
+    return (<Layout title={title}>
             <div className="mt-8 mb-20 mx-auto max-w-fit">
                 <h1 className="mb-4 text-3xl font-bold tracking-tight text-gray-900 dark:text-gray-50 sm:text-4xl">{title}</h1>
 
