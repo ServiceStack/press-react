@@ -1,0 +1,3 @@
+import{j as n}from"./index-CLjBKMbA.js";function i(e){const t={p:"p",...e.components};return n.jsxs(n.Fragment,{children:[n.jsx(t.p,{children:"ServiceStack templates provide a wide range of options when it comes to using Razor Pages in your .NET application"}),`
+`,n.jsx(t.p,{children:`These templates come with Tailwind, JS Modules, and Vue components already built-in, making it easy to build
+hybrid apps containing both Server-Side Rendering (SSR) and static resources`})]})}function a(e={}){const{wrapper:t}=e.components||{};return t?n.jsx(t,{...e,children:n.jsx(i,{...e})}):i(e)}export{a as default};
