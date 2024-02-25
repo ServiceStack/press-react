@@ -486,13 +486,14 @@ of the code-block to convert the structured ascii layout into a more familiar GU
     nextjs.md
 ```
 
-This nice thing about this approach of marking up documentation is that the markdown content still remains in optimal 
-human-readable form even without any custom components to render rich UI components.
+The benefit of this approach of marking up documentation is that the markdown content still remains in an optimal 
+human-readable form even when the markdown renderer lacks the custom fenced components to render the richer UI.
 
 ## Components In Markdown
 
-Ideally most of your Markdown content are able to just make use of the above features, but when even more interactivity
-and richer functionality is required you're able to embed components directly in Markdown, but comes at the cost of
-reduced portability.
+Up till now all above features will let you render the same markdown content in all available Vue, React, Razor or Blazor
+templates. At the cost of reduced portability, you're also able to embed rich Interactive Vue or React components directly in 
+markdown.
 
-#### [React Components in Markdown](/posts/markdown-components-in-react)
+:::include component-links.md:::
+
