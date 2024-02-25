@@ -1,7 +1,7 @@
 import { h } from 'hastscript'
 import { visit } from 'unist-util-visit'
 
-const fencedComponents = ['files','files2']
+const fencedComponents = ['files']
 
 // Convert ```component``` to <component body={children} />
 export function remarkFencedCode(options: { components?:string[] } = {}) {
