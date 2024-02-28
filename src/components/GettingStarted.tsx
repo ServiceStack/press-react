@@ -53,14 +53,6 @@ export default ({ template }: Props) => {
         <h4 className="pb-4 text-center text-xl">or</h4>
         <ShellCommand className="mb-2">npx degit ServiceStack/press-react</ShellCommand>
 
-        <h4 className="py-4 text-center text-xl">or</h4>
-
-        <div className="mx-auto">
-            <a href="https://stackblitz.com/github/ServiceStack/press-react">
-                <img alt="Open in StackBlitz" src="https://developer.stackblitz.com/img/open_in_stackblitz.svg" />
-            </a>
-        </div>
-
         <h4 className="py-6 text-center text-xl">Run</h4>
         <ShellCommand className="mb-2">npm install</ShellCommand>
         <ShellCommand className="mb-2">npm run dev</ShellCommand>
