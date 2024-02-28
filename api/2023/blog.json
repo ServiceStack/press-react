@@ -61,8 +61,8 @@
             "blog",
             "dev"
         ],
-        "wordCount": 3362,
-        "lineCount": 597,
+        "wordCount": 3350,
+        "lineCount": 593,
         "title": "Introducing Razor SSG",
         "summary": "Create fast, beautiful statically rendered Razor Websites & Blogs",
         "image": "https://images.unsplash.com/photo-1579767684138-a57e917d30aa?crop=entropy&fit=crop&h=1000&w=2000",
