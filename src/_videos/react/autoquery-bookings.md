@@ -3,7 +3,7 @@ title: Build a Bookings API with Auto Admin UI in minutes
 url: https://youtu.be/rSFiikDjGos
 tags: [autoquery]
 date: 16-08-2022
-order: 2
+order: 4
 ---
 
 From an empty web project, this video shows how to:

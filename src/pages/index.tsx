@@ -5,6 +5,7 @@ import GettingStarted from "@/components/GettingStarted"
 import Include from "@/components/Include"
 import VideoGroup from "@/components/VideoGroup"
 import SrcPage from "@/components/SrcPage"
+import LiteYouTube from "@/components/LiteYouTube"
 import { generateSlug, dateLabel, dateTimestamp } from "@/utils"
 import { PressContext } from "@/contexts"
 import { useContext } from "react"
@@ -61,6 +62,15 @@ const Index = () => {
                     </div>
                 </div>
             </section>
+
+            <div className="relative">
+                <div className="mt-8 max-w-6xl mx-auto">
+                    <div className="aspect-w-16 aspect-h-9 pb-0">
+                        <LiteYouTube id="WXLF0piz6G0" poster="maxresdefault"
+                                     title="Vite React Markdown Websites with Vite Press Plugin"/>
+                    </div>
+                </div>
+            </div>
 
             <div className="container mx-auto px-5 mt-24 mb-24">
                 {!primaryPost ? null : <section>
