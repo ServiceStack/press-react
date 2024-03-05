@@ -1,0 +1,18 @@
+[
+    {
+        "slug": "press-react",
+        "fileName": "press-react.md",
+        "date": "2024-03-07",
+        "tags": [
+            "react",
+            "vite",
+            "markdown"
+        ],
+        "wordCount": 62,
+        "lineCount": 4,
+        "title": "Vite React Markdown Websites with Vite Press Plugin",
+        "url": "https://youtu.be/S6O8QCaXDG0",
+        "order": 1,
+        "group": "react"
+    }
+]

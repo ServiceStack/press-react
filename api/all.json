@@ -219,6 +219,22 @@
     ],
     "videos": [
         {
+            "slug": "press-react",
+            "fileName": "press-react.md",
+            "date": "2024-03-07",
+            "tags": [
+                "react",
+                "vite",
+                "markdown"
+            ],
+            "wordCount": 62,
+            "lineCount": 4,
+            "title": "Vite React Markdown Websites with Vite Press Plugin",
+            "url": "https://youtu.be/S6O8QCaXDG0",
+            "order": 1,
+            "group": "react"
+        },
+        {
             "slug": "nextjs",
             "fileName": "nextjs.md",
             "date": "2022-02-08",
@@ -231,7 +247,7 @@
             "lineCount": 6,
             "title": "Rapidly develop C# .NET Next.js JamStack Apps with Rider",
             "url": "https://youtu.be/3pPLRyPsO5A",
-            "order": 1,
+            "order": 2,
             "group": "react"
         },
         {
@@ -245,7 +261,7 @@
             "lineCount": 6,
             "title": "Build a Bookings API with Auto Admin UI in minutes",
             "url": "https://youtu.be/rSFiikDjGos",
-            "order": 2,
+            "order": 4,
             "group": "react"
         },
         {
@@ -261,7 +277,7 @@
             "lineCount": 6,
             "title": "Database first development with Locode",
             "url": "https://youtu.be/NiTp5Z_5U2Y",
-            "order": 3,
+            "order": 4,
             "group": "react"
         },
         {
@@ -276,23 +292,6 @@
             "lineCount": 4,
             "title": "Modern Razor Pages & MVC .NET Tailwind templates",
             "url": "https://youtu.be/SyppvQB7IPs",
-            "order": 4,
-            "group": "react"
-        },
-        {
-            "slug": "razor-ssg",
-            "fileName": "razor-ssg.md",
-            "date": "2023-03-29",
-            "tags": [
-                "razor-pages",
-                "ssg",
-                "tailwind",
-                "codespaces"
-            ],
-            "wordCount": 73,
-            "lineCount": 6,
-            "title": "Using Razor SSG to Create Websites in GitHub Codespaces",
-            "url": "https://youtu.be/MRQMBrXi5Sc",
             "order": 5,
             "group": "react"
         }

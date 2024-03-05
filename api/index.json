@@ -5,6 +5,7 @@
         "https://press-react.servicestack.net/meta/2022/blog.json"
     ],
     "videos": [
+        "https://press-react.servicestack.net/meta/2024/videos.json",
         "https://press-react.servicestack.net/meta/2022/videos.json",
         "https://press-react.servicestack.net/meta/2023/videos.json"
     ],

@@ -165,23 +165,6 @@
             "lineCount": 4,
             "title": "Modern Razor Pages & MVC .NET Tailwind templates",
             "url": "https://youtu.be/SyppvQB7IPs",
-            "order": 4,
-            "group": "react"
-        },
-        {
-            "slug": "razor-ssg",
-            "fileName": "razor-ssg.md",
-            "date": "2023-03-29",
-            "tags": [
-                "razor-pages",
-                "ssg",
-                "tailwind",
-                "codespaces"
-            ],
-            "wordCount": 73,
-            "lineCount": 6,
-            "title": "Using Razor SSG to Create Websites in GitHub Codespaces",
-            "url": "https://youtu.be/MRQMBrXi5Sc",
             "order": 5,
             "group": "react"
         }
