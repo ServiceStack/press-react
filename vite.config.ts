@@ -2,6 +2,7 @@ import { fileURLToPath, URL } from 'node:url'
 
 import { defineConfig } from 'vite'
 import react from '@vitejs/plugin-react'
+import tailwindcss from '@tailwindcss/vite'
 import fs from 'fs'
 import path from 'path'
 import { env } from 'process'
@@ -47,6 +48,7 @@ export default defineConfig(async () => {
         extensions: ['tsx', 'mdx']
       }),
       react(),
+      tailwindcss(),
       Press({
         baseUrl: env.NODE_ENV === 'development'
           ? 'https://localhost:5173'
